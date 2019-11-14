@@ -15,8 +15,9 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.ExifInterface;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -111,8 +112,8 @@ public class PuzzleActivity extends AppCompatActivity {
 
     private ArrayList<PuzzlePiece> splitImage() {
         int piecesNumber = 12;
-        int rows = 4;
-        int cols = 3;
+        int rows = 3;
+        int cols = 4;
 
         ImageView imageView = findViewById(R.id.imageView);
         ArrayList<PuzzlePiece> pieces = new ArrayList<>(piecesNumber);
@@ -291,6 +292,23 @@ public class PuzzleActivity extends AppCompatActivity {
         }
     }
 
+    int Hintcnt=0;
+    public void OnHintfromOriginalImage(View view){
+
+        if(Hintcnt==0) {
+            Toast.makeText(getApplicationContext(), "한번만 더 생각해보세요", Toast.LENGTH_LONG).show();
+            Hintcnt++;
+        }
+        else{
+            Hintcnt=0;
+            //힌트 이미지 출력만 하면 끝.
+            Toast.makeText(getApplicationContext(), "힌트", Toast.LENGTH_SHORT).show(); //새로운 윈도우로 연결 HintWindow
+            Intent intent=new Intent(getApplicationContext(),HintWindow.class);
+            startActivity(intent);
+        }
+    }
+
+
     private boolean isGameOver() {
         for (PuzzlePiece piece : pieces) {
             if (piece.canMove) {
@@ -352,4 +370,5 @@ public class PuzzleActivity extends AppCompatActivity {
         return Bitmap.createBitmap(source, 0, 0, source.getWidth(), source.getHeight(),
                 matrix, true);
     }
+
 }
