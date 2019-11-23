@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
         } catch (IOException e) {
             Toast.makeText(this, e.getLocalizedMessage(), Toast.LENGTH_SHORT);
         }
-
     }
 
     public void onImageFromCameraClick(View view) {

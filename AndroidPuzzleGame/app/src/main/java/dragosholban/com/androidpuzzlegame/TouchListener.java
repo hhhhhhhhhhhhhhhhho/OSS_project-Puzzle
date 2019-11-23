@@ -18,6 +18,7 @@ public class TouchListener implements View.OnTouchListener {
         this.activity = activity;
     }
 
+
     @Override
     public boolean onTouch(View view, MotionEvent motionEvent) {
         float x = motionEvent.getRawX();

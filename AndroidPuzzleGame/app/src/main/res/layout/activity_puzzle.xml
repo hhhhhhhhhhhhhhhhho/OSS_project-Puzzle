@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="dragosholban.com.androidpuzzlegame.PuzzleActivity"
-    android:background="@drawable/table_background">
+    android:background="@drawable/table_background"
+    tools:context="dragosholban.com.androidpuzzlegame.PuzzleActivity">
 
     <ImageView
+        android:id="@+id/imageView3"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:alpha="1.0"
         app:layout_constraintDimensionRatio="H,4:5"
@@ -24,9 +23,10 @@
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="18dp"
+        android:layout_marginEnd="16dp"
+        android:alpha="0.5"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="H,4:5"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,8 +34,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/photo"
-        android:alpha="0.5" />
+        app:srcCompat="@drawable/photo" />
 
     <RelativeLayout
         android:id="@+id/layout"
@@ -54,12 +53,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:background="#EBDFDF"
         android:onClick="OnHintfromOriginalImage"
         android:text="HINT"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/layout"
         app:layout_constraintTop_toBottomOf="@+id/layout"
-        tools:layout_editor_absoluteX="8dp" />
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/setting_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="87dp"
+        android:layout_marginRight="87dp"
+        android:text="setting"
+        android:visibility="visible"
+        android:onClick="Onlevel_Setting"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout" />
 
 </android.support.constraint.ConstraintLayout>
