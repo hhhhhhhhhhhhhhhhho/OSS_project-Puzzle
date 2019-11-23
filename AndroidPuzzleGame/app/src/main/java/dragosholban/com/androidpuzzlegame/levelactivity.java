@@ -6,12 +6,12 @@ import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import java.io.File;
 import java.io.IOException;
-
 public class levelactivity extends AppCompatActivity{
 
     @Override
@@ -20,27 +20,17 @@ public class levelactivity extends AppCompatActivity{
         setContentView(R.layout.activity_levelactivity);
     }
 
-    public void onbackButtonCliked(View v){
-        Toast.makeText(getApplicationContext(), "퍼즐 화면으로 돌아갑니다.", Toast.LENGTH_SHORT).show();
-
-        finish();
-    }
 
     public void level_1(View view) {
-        PuzzleActivity p = new PuzzleActivity();
-        p.Level_1();
-        finish();
+        Intent intent = new Intent(levelactivity.this,MainActivity.class);
+        startActivity(intent);
     }
-
     public void level_2(View view) {
-        PuzzleActivity p = new PuzzleActivity();
-        p.Level_2();
-        finish();
+        Intent intent = new Intent(levelactivity.this,MainActivity2.class);
+        startActivity(intent);
     }
-
     public void level_3(View view) {
-        PuzzleActivity p = new PuzzleActivity();
-        p.Level_3();
-        finish();
+        Intent intent = new Intent(levelactivity.this,MainActivity.class);
+        startActivity(intent);
     }
 }
