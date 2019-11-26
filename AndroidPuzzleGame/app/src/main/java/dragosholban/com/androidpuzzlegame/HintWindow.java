@@ -17,6 +17,10 @@ import android.widget.Toast;
 import java.io.IOException;
 import java.io.InputStream;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> taejeong
 public class HintWindow extends AppCompatActivity{
 
     Intent intent=getIntent();
@@ -48,6 +52,9 @@ public class HintWindow extends AppCompatActivity{
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> taejeong
     private void setPicFromPath(String mCurrentPhotoPath, ImageView imageView) {
         // Get the dimensions of the View
         int targetW = imageView.getWidth();
@@ -98,6 +105,43 @@ public class HintWindow extends AppCompatActivity{
         matrix.postRotate(angle);
         return Bitmap.createBitmap(source, 0, 0, source.getWidth(), source.getHeight(),
                 matrix, true);
+<<<<<<< HEAD
+=======
+    }
+
+
+    private void setPicFromAsset(String assetName, ImageView imageView) {
+        // Get the dimensions of the View
+        int targetW = imageView.getWidth();
+        int targetH = imageView.getHeight();
+
+        AssetManager am = getAssets();
+        try {
+            InputStream is = am.open("img/" + assetName);
+            // Get the dimensions of the bitmap
+            BitmapFactory.Options bmOptions = new BitmapFactory.Options();
+            bmOptions.inJustDecodeBounds = true;
+            BitmapFactory.decodeStream(is, new Rect(-1, -1, -1, -1), bmOptions);
+            int photoW = bmOptions.outWidth;
+            int photoH = bmOptions.outHeight;
+
+            // Determine how much to scale down the image
+            int scaleFactor = Math.min(photoW/targetW, photoH/targetH);
+
+            is.reset();
+
+            // Decode the image file into a Bitmap sized to fill the View
+            bmOptions.inJustDecodeBounds = false;
+            bmOptions.inSampleSize = scaleFactor;
+            bmOptions.inPurgeable = true;
+
+            Bitmap bitmap = BitmapFactory.decodeStream(is, new Rect(-1, -1, -1, -1), bmOptions);
+            imageView.setImageBitmap(bitmap);
+        } catch (IOException e) {
+            e.printStackTrace();
+            Toast.makeText(this, e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+        }
+>>>>>>> taejeong
     }
 
 
@@ -138,7 +182,10 @@ public class HintWindow extends AppCompatActivity{
     public void onbackButtonCliked(View v){
         Toast.makeText(getApplicationContext(), "퍼즐 화면으로 돌아갑니다.", Toast.LENGTH_SHORT).show();
         startActivity(intent);
+<<<<<<< HEAD
 
+=======
+>>>>>>> taejeong
         finish();
     }
 }
