@@ -30,7 +30,7 @@ public class levelactivity extends AppCompatActivity{
         startActivity(intent);
     }
     public void level_3(View view) {
-        Intent intent = new Intent(levelactivity.this,MainActivity.class);
+        Intent intent = new Intent(levelactivity.this,MainActivity3.class);
         startActivity(intent);
     }
 }
