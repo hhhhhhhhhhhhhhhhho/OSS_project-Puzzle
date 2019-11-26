@@ -17,10 +17,7 @@ import android.widget.Toast;
 import java.io.IOException;
 import java.io.InputStream;
 
-<<<<<<< HEAD
-=======
 
->>>>>>> taejeong
 public class HintWindow extends AppCompatActivity{
 
     Intent intent=getIntent();
@@ -51,10 +48,6 @@ public class HintWindow extends AppCompatActivity{
         setContentView(imageView);
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> taejeong
     private void setPicFromPath(String mCurrentPhotoPath, ImageView imageView) {
         // Get the dimensions of the View
         int targetW = imageView.getWidth();
@@ -105,8 +98,7 @@ public class HintWindow extends AppCompatActivity{
         matrix.postRotate(angle);
         return Bitmap.createBitmap(source, 0, 0, source.getWidth(), source.getHeight(),
                 matrix, true);
-<<<<<<< HEAD
-=======
+
     }
 
 
@@ -141,7 +133,7 @@ public class HintWindow extends AppCompatActivity{
             e.printStackTrace();
             Toast.makeText(this, e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
         }
->>>>>>> taejeong
+
     }
 
 
@@ -182,10 +174,7 @@ public class HintWindow extends AppCompatActivity{
     public void onbackButtonCliked(View v){
         Toast.makeText(getApplicationContext(), "퍼즐 화면으로 돌아갑니다.", Toast.LENGTH_SHORT).show();
         startActivity(intent);
-<<<<<<< HEAD
 
-=======
->>>>>>> taejeong
         finish();
     }
 }
