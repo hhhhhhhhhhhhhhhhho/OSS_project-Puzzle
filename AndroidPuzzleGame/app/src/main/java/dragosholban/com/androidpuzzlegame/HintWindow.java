@@ -138,7 +138,7 @@ public class HintWindow extends AppCompatActivity{
     }
 
 =======
->>>>>>> taejeong
+        >>>>>>> taejeong
     public void onbackButtonCliked(View v){
         Toast.makeText(getApplicationContext(), "퍼즐 화면으로 돌아갑니다.", Toast.LENGTH_SHORT).show();
         startActivity(intent);
