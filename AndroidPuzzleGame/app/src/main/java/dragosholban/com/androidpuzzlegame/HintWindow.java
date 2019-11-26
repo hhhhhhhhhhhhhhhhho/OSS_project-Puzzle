@@ -4,11 +4,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
+<<<<<<< HEAD
 //<<<<<<< HEAD
 //taehoon git
 //=======
 
 //>>>>>>> master
+=======
+>>>>>>> TaeHoon/master
 public class HintWindow extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle saveInstanceState){

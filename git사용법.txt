@@ -1,0 +1,6 @@
+git status
+git add .
+git commit -m ""
+git push
+git branch
+git merge taehoon

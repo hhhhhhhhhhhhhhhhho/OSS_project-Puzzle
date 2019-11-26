@@ -23,7 +23,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity2 extends AppCompatActivity {
     String mCurrentPhotoPath;
     private static final int REQUEST_PERMISSION_WRITE_EXTERNAL_STORAGE = 2;
     private static final int REQUEST_IMAGE_CAPTURE = 1;
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                    Intent intent = new Intent(getApplicationContext(), PuzzleActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), PuzzleActivity2.class);
                     intent.putExtra("assetName", files[i % files.length]);
                     startActivity(intent);
 
@@ -112,14 +112,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            Intent intent = new Intent(this, PuzzleActivity.class);
+            Intent intent = new Intent(this, PuzzleActivity2.class);
             intent.putExtra("mCurrentPhotoPath", mCurrentPhotoPath);
             startActivity(intent);
         }
         if (requestCode == REQUEST_IMAGE_GALLERY && resultCode == RESULT_OK) {
             Uri uri = data.getData();
 
-            Intent intent = new Intent(this, PuzzleActivity.class);
+            Intent intent = new Intent(this, PuzzleActivity2.class);
             intent.putExtra("mCurrentPhotoUri", uri.toString());
             startActivity(intent);
         }

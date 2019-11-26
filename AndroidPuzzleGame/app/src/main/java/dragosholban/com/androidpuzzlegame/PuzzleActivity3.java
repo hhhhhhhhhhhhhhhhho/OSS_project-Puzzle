@@ -30,7 +30,7 @@ import java.util.Random;
 
 import static java.lang.Math.abs;
 
-public class PuzzleActivity extends AppCompatActivity {
+public class PuzzleActivity3 extends AppCompatActivity {
     ArrayList<PuzzlePiece> pieces;
     String mCurrentPhotoPath;
     String mCurrentPhotoUri;
@@ -60,8 +60,8 @@ public class PuzzleActivity extends AppCompatActivity {
                 } else if (mCurrentPhotoUri != null) {
                     imageView.setImageURI(Uri.parse(mCurrentPhotoUri));
                 }
-                Level_1();
-                TouchListener touchListener = new TouchListener(PuzzleActivity.this);
+                Level_3();
+                TouchListener touchListener = new TouchListener(PuzzleActivity3.this);
                 // shuffle pieces order
                 Collections.shuffle(pieces);
                 for (PuzzlePiece piece : pieces) {

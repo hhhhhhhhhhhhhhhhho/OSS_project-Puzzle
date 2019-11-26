@@ -13,10 +13,14 @@ public class TouchListener implements View.OnTouchListener {
     private float xDelta;
     private float yDelta;
     private PuzzleActivity activity;
-
+    private PuzzleActivity2 activity2;
+    private PuzzleActivity3 activity3;
     public TouchListener(PuzzleActivity activity) {
         this.activity = activity;
     }
+
+    public TouchListener(PuzzleActivity2 activity) { this.activity2 = activity;}
+    public TouchListener(PuzzleActivity3 activity) { this.activity3 = activity;}
 
     @Override
     public boolean onTouch(View view, MotionEvent motionEvent) {
