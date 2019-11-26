@@ -14,18 +14,26 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 import java.io.IOException;
 import java.io.InputStream;
+=======
+>>>>>>> taejeong
 //<<<<<<< HEAD
 //taehoon git
 //=======
 
 //>>>>>>> master
+<<<<<<< HEAD
 
 //Hintwindow 로 넘어가지 않음.
 =======
 >>>>>>> remotes/github-desktop-allstar94/master
+=======
+=======
+>>>>>>> TaeHoon/master
+>>>>>>> taejeong
 public class HintWindow extends AppCompatActivity{
 
     Intent intent=getIntent();
