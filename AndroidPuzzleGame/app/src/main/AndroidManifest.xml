@@ -22,10 +22,6 @@
             android:name=".MainActivity"
             android:screenOrientation="portrait">
         </activity>
-<<<<<<< HEAD
-        <activity android:name=".PuzzleActivity"></activity>
-        <activity android:name=".HintWindow"></activity>
-=======
         <activity
         android:name=".MainActivity2"
         android:screenOrientation="portrait">
@@ -40,9 +36,12 @@
 
         <activity android:name=".HintWindow" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> remotes/github-desktop-allstar94/master
 =======
 >>>>>>> TaeHoon/master
+>>>>>>> taejeong
+=======
 >>>>>>> taejeong
 
         <provider

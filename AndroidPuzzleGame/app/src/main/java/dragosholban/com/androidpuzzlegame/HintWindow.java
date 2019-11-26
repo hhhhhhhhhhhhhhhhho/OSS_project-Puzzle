@@ -13,10 +13,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
+<<<<<<< HEAD
 
 import java.io.IOException;
 import java.io.InputStream;
 
+=======
+>>>>>>> taejeong
 public class HintWindow extends AppCompatActivity{
 
     Intent intent=getIntent();
@@ -47,6 +50,7 @@ public class HintWindow extends AppCompatActivity{
         setContentView(imageView);
     }
 
+<<<<<<< HEAD
     private void setPicFromPath(String mCurrentPhotoPath, ImageView imageView) {
         // Get the dimensions of the View
         int targetW = imageView.getWidth();
@@ -133,6 +137,8 @@ public class HintWindow extends AppCompatActivity{
         }
     }
 
+=======
+>>>>>>> taejeong
     public void onbackButtonCliked(View v){
         Toast.makeText(getApplicationContext(), "퍼즐 화면으로 돌아갑니다.", Toast.LENGTH_SHORT).show();
         startActivity(intent);
