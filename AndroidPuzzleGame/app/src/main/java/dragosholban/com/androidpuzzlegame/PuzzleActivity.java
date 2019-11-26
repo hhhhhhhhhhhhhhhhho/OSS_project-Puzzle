@@ -91,7 +91,7 @@ public class PuzzleActivity extends AppCompatActivity {
 
     }
 
-    private void setPicFromAsset(String assetName, ImageView imageView) {
+    public void setPicFromAsset(String assetName, ImageView imageView) {
         // Get the dimensions of the View
         int targetW = imageView.getWidth();
         int targetH = imageView.getHeight();
@@ -587,12 +587,12 @@ public class PuzzleActivity extends AppCompatActivity {
         }
         else{
             Hintcnt=0;
-            //힌트 이미지 출력만 하면 끝.
             Toast.makeText(getApplicationContext(), "힌트", Toast.LENGTH_SHORT).show(); //새로운 윈도우로 연결 HintWindow
             Intent intent=new Intent(getApplicationContext(),HintWindow.class);
             startActivity(intent);
         }
     }
+
     public void Onlevel_Setting(View view)
     {
         Intent intent = new Intent(getApplicationContext(),levelactivity.class);
@@ -610,7 +610,7 @@ public class PuzzleActivity extends AppCompatActivity {
         return true;
     }
 
-    private void setPicFromPath(String mCurrentPhotoPath, ImageView imageView) {
+    public void setPicFromPath(String mCurrentPhotoPath, ImageView imageView) {
         // Get the dimensions of the View
         int targetW = imageView.getWidth();
         int targetH = imageView.getHeight();
