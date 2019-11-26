@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
+<<<<<<< HEAD
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,6 +24,8 @@ import java.io.InputStream;
 //>>>>>>> master
 
 //Hintwindow 로 넘어가지 않음.
+=======
+>>>>>>> remotes/github-desktop-allstar94/master
 public class HintWindow extends AppCompatActivity{
 
     Intent intent=getIntent();

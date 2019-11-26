@@ -30,11 +30,11 @@ import java.util.Random;
 
 import static java.lang.Math.abs;
 
-public class PuzzleActivity extends AppCompatActivity {
+public class PuzzleActivity3 extends AppCompatActivity {
     ArrayList<PuzzlePiece> pieces;
     String mCurrentPhotoPath;
     String mCurrentPhotoUri;
-    String sendName;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +45,6 @@ public class PuzzleActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         final String assetName = intent.getStringExtra("assetName");
-        sendName=assetName;
         mCurrentPhotoPath = intent.getStringExtra("mCurrentPhotoPath");
         mCurrentPhotoUri = intent.getStringExtra("mCurrentPhotoUri");
 
@@ -61,8 +60,8 @@ public class PuzzleActivity extends AppCompatActivity {
                 } else if (mCurrentPhotoUri != null) {
                     imageView.setImageURI(Uri.parse(mCurrentPhotoUri));
                 }
-                Level_1();
-                TouchListener touchListener = new TouchListener(PuzzleActivity.this);
+                Level_3();
+                TouchListener touchListener = new TouchListener(PuzzleActivity3.this);
                 // shuffle pieces order
                 Collections.shuffle(pieces);
                 for (PuzzlePiece piece : pieces) {
@@ -576,8 +575,6 @@ public class PuzzleActivity extends AppCompatActivity {
         }
     }
 
-<<<<<<< HEAD
-=======
     int Hintcnt=0;
     public void OnHintfromOriginalImage(View view){
 
@@ -598,7 +595,6 @@ public class PuzzleActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(),levelactivity.class);
         startActivity(intent);
     }
->>>>>>> remotes/github-desktop-allstar94/master
 
 
     private boolean isGameOver() {
@@ -661,28 +657,5 @@ public class PuzzleActivity extends AppCompatActivity {
         return Bitmap.createBitmap(source, 0, 0, source.getWidth(), source.getHeight(),
                 matrix, true);
     }
-
-    int Hintcnt=0;
-    public void OnHintfromOriginalImage(View view){
-
-        if(Hintcnt==0) {
-            Toast.makeText(getApplicationContext(), "한번만 더 생각해보세요", Toast.LENGTH_LONG).show();
-            Hintcnt++;
-        }
-        else{
-            Hintcnt=0;
-            //힌트 이미지 출력만 하면 끝.
-            Toast.makeText(getApplicationContext(), "힌트", Toast.LENGTH_SHORT).show(); //새로운 윈도우로 연결 HintWindow
-            Intent intent;
-            intent=new Intent(getApplicationContext(),HintWindow.class);
-            intent.putExtra("ImagePath",mCurrentPhotoPath);
-            intent.putExtra("ImagePathURL",mCurrentPhotoUri);
-            intent.putExtra("name",sendName);
-            startActivity(intent);
-
-            setContentView(R.layout.activity_now);
-        }
-    }
-
 
 }
