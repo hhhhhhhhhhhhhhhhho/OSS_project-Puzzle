@@ -114,14 +114,23 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Intent intent = new Intent(this, PuzzleActivity.class);
             intent.putExtra("mCurrentPhotoPath", mCurrentPhotoPath);
+
+            Intent intent3 = new Intent(this, HintWindow.class);
+            intent.putExtra("mCurrentPhotoPath", mCurrentPhotoPath);
+
             startActivity(intent);
+            startActivity(intent3);
         }
         if (requestCode == REQUEST_IMAGE_GALLERY && resultCode == RESULT_OK) {
             Uri uri = data.getData();
 
             Intent intent = new Intent(this, PuzzleActivity.class);
             intent.putExtra("mCurrentPhotoUri", uri.toString());
+
+            Intent intent2 = new Intent(this, HintWindow.class);
+            intent.putExtra("mCurrentPhotoUri", uri.toString());
             startActivity(intent);
+            startActivity(intent2);
         }
     }
 
