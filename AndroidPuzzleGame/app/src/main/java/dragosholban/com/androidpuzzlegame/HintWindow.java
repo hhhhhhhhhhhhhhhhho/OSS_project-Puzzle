@@ -46,7 +46,7 @@ public class HintWindow extends PuzzleActivity{
             imageView.setImageURI(Uri.parse(mCurrentPhotoUri));
         }
     }
-    
+
     public static Bitmap rotateImage(Bitmap source, float angle) {
         Matrix matrix = new Matrix();
         matrix.postRotate(angle);
