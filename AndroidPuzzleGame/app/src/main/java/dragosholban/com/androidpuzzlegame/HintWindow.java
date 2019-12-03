@@ -20,21 +20,34 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-public class HintWindow extends MainActivity{
+public class HintWindow extends PuzzleActivity{
 
-    Intent intent = getIntent();
-  //  String assetName = intent.getExtras().getString("name");
- //   String mCurrentPhotoPath = intent.getExtras().getString("ImagePath");
-   // String mCurrentPhotoUri = intent.getExtras().getString("ImagePathURL");
+    String assetName;
+    String mCurrentPhotoPath;
+    String mCurrentPhotoUri;
 
     @Override
-    protected void onCreate(Bundle saveInstanceState){
+    public void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
+        Intent intent = getIntent();
+        assetName = intent.getStringExtra("assetName");
+        mCurrentPhotoPath = intent.getStringExtra("mCurrentPhotoPath");
+        mCurrentPhotoUri = intent.getStringExtra("mCurrentPhotoUri");
+
+
+        final ImageView imageView = findViewById(R.id.imageView);
         setContentView(R.layout.activity_now);
-        //PuzzleActivity p = new PuzzleActivity();
-        //p.setPicFromPath(p.mCurrentPhotoPath,imageView);
+        if (assetName != null) {
+            //오류해결해야함->setPicFromAsset 인자 부족한것같음
+            setPicFromAsset(assetName, imageView);
+        } else if (mCurrentPhotoPath != null) {
+            setPicFromPath(mCurrentPhotoPath, imageView);
+        } else if (mCurrentPhotoUri != null) {
+            imageView.setImageURI(Uri.parse(mCurrentPhotoUri));
+        }
     }
 
+<<<<<<< HEAD
 
     public static Bitmap rotateImage(Bitmap source, float angle) {
         Matrix matrix = new Matrix();
@@ -49,6 +62,16 @@ public class HintWindow extends MainActivity{
         // Get the dimensions of the View
         int targetW = imageView.getWidth();
         int targetH = imageView.getHeight();
+=======
+    public void onbackButtonCliked(View v){
+        Toast.makeText(getApplicationContext(), "퍼즐 화면으로 돌아갑니다.", Toast.LENGTH_SHORT).show();
+        finish();
+    }
+
+
+
+}
+>>>>>>> taejeong
 
         AssetManager am = getAssets();
         try {
