@@ -46,36 +46,19 @@ public class HintWindow extends PuzzleActivity{
             imageView.setImageURI(Uri.parse(mCurrentPhotoUri));
         }
     }
+    
+    public static Bitmap rotateImage(Bitmap source, float angle) {
+        Matrix matrix = new Matrix();
+        matrix.postRotate(angle);
+        return Bitmap.createBitmap(source, 0, 0, source.getWidth(), source.getHeight(),
+                matrix, true);
+
+    }
 
     public void onbackButtonCliked(View v){
         Toast.makeText(getApplicationContext(), "퍼즐 화면으로 돌아갑니다.", Toast.LENGTH_SHORT).show();
         finish();
+
     }
-
-
 
 }
-
-/*
-public class HintWindow extends MainActivity{
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_now);
-    }
-
-    //protected void onCreate(Bundle savedInstanceState) {
-        //super.onCreate(savedInstanceState);
-        //ImageView imageView = (ImageView) findViewById(R.id.imageView);
-        //Uri uri = Uri.parse("file:///" + Environment.getExternalStorageDirectory() + mCurrentPhotoUri);
-        //imageView.setImageURI(uri);
-        //setContentView(R.layout.activity_now);
-    //}
-
-    public void onbackButtonCliked(View v){
-        Toast.makeText(getApplicationContext(), "퍼즐 화면으로 돌아갑니다.", Toast.LENGTH_SHORT).show();
-        finish();
-    }
-}*/
