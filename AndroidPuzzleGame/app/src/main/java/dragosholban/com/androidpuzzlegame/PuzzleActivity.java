@@ -52,7 +52,7 @@ public class PuzzleActivity extends AppCompatActivity {
         // to have all dimensions calculated
         imageView.post(new Runnable() {
             @Override
-            public void run() {
+            public void run() {///?/
                 if (assetName != null) {
                     setPicFromAsset(assetName, imageView);
                 } else if (mCurrentPhotoPath != null) {
@@ -92,6 +92,7 @@ public class PuzzleActivity extends AppCompatActivity {
 
     public void setPicFromAsset(String assetName, ImageView imageView) {
         // Get the dimensions of the View
+
         int targetW = imageView.getWidth();
         int targetH = imageView.getHeight();
 
