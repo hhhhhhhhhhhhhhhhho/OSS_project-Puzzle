@@ -41,17 +41,17 @@ public class HintWindow extends AppCompatActivity {
         assetName = intent.getStringExtra("assetName");
         mCurrentPhotoPath = intent.getStringExtra("mCurrentPhotoPath");
         mCurrentPhotoUri = intent.getStringExtra("mCurrentPhotoUri");
-        ImageView imageView = findViewById(R.id.imageView);
-        setContentView(R.layout.activity_now);
-        final ImageView image = new ImageView(this);
-        if (assetName != null) {
-            setPicFromAsset(assetName, image);
-        } else if (mCurrentPhotoPath != null) {
-            setPicFromPath(mCurrentPhotoPath, image);
-        } else if (mCurrentPhotoUri != null) {
-            image.setImageURI(Uri.parse(mCurrentPhotoUri));
-        }
 
+        setContentView(R.layout.activity_now);
+        final ImageView imageView = new ImageView(this);
+
+        if (assetName != null) {
+            setPicFromAsset(assetName, imageView);
+        } else if (mCurrentPhotoPath != null) {
+            setPicFromPath(mCurrentPhotoPath, imageView);
+        } else if (mCurrentPhotoUri != null) {
+            imageView.setImageURI(Uri.parse(mCurrentPhotoUri));
+        }
     }
 
 

@@ -14,6 +14,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.ExifInterface;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -30,7 +31,9 @@ import java.util.Random;
 
 import static java.lang.Math.abs;
 
+
 public class PuzzleActivity extends AppCompatActivity {
+    private static MediaPlayer mp;
     ArrayList<PuzzlePiece> pieces;
     String mCurrentPhotoPath;
     String mCurrentPhotoUri;
@@ -75,6 +78,9 @@ public class PuzzleActivity extends AppCompatActivity {
                 }
             }
         });
+         mp = MediaPlayer.create(this,R.raw.maple);
+         mp.setLooping(true);
+         mp.start();
     }
     public void Level_1()
     {
@@ -572,6 +578,8 @@ public class PuzzleActivity extends AppCompatActivity {
 
     public void checkGameOver() {
         if (isGameOver()) {
+            mp.stop();
+            mp.release();
             finish();
         }
     }
