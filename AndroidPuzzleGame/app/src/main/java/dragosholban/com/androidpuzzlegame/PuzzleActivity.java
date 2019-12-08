@@ -38,11 +38,9 @@ public class PuzzleActivity extends AppCompatActivity {
     ArrayList<PuzzlePiece> pieces;
     String mCurrentPhotoPath;
     String mCurrentPhotoUri;
-<<<<<<< HEAD
     String sendName;
-=======
     String assetName;
->>>>>>> taejeong
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,12 +50,9 @@ public class PuzzleActivity extends AppCompatActivity {
         final RelativeLayout layout = findViewById(R.id.layout);
 
         Intent intent = getIntent();
-<<<<<<< HEAD
+
         final String assetName = intent.getStringExtra("assetName");
         sendName=assetName;
-=======
-        assetName = intent.getStringExtra("assetName");
->>>>>>> taejeong
         mCurrentPhotoPath = intent.getStringExtra("mCurrentPhotoPath");
         mCurrentPhotoUri = intent.getStringExtra("mCurrentPhotoUri");
 
@@ -594,34 +589,11 @@ public class PuzzleActivity extends AppCompatActivity {
         }
     }
 
-<<<<<<< HEAD
-=======
-    int Hintcnt=0;
-    public void OnHintfromOriginalImage(View view){
-
-        if(Hintcnt==0) {
-            Toast.makeText(getApplicationContext(), "한번만 더 생각해보세요", Toast.LENGTH_LONG).show();
-            Hintcnt++;
-        }
-        else{
-            Hintcnt=0;
-            Toast.makeText(getApplicationContext(), "힌트", Toast.LENGTH_SHORT).show(); //새로운 윈도우로 연결 HintWindow
-            Intent intent=new Intent(getApplicationContext(),HintWindow.class);
-            intent.putExtra("assetName",assetName);
-            intent.putExtra("mCurrentPhotoPath", mCurrentPhotoPath);
-            intent.putExtra("mCurrentPhotoUri", mCurrentPhotoUri);
-            startActivity(intent);
-
-        }
-    }
-
     public void Onlevel_Setting(View view)
     {
         Intent intent = new Intent(getApplicationContext(),levelactivity.class);
         startActivity(intent);
     }
->>>>>>> remotes/github-desktop-allstar94/master
-
 
     private boolean isGameOver() {
         for (PuzzlePiece piece : pieces) {
@@ -677,16 +649,9 @@ public class PuzzleActivity extends AppCompatActivity {
         imageView.setImageBitmap(rotatedBitmap);
     }
 
-    public static Bitmap rotateImage(Bitmap source, float angle) {
-        Matrix matrix = new Matrix();
-        matrix.postRotate(angle);
-        return Bitmap.createBitmap(source, 0, 0, source.getWidth(), source.getHeight(),
-                matrix, true);
-    }
 
     int Hintcnt=0;
     public void OnHintfromOriginalImage(View view){
-
         if(Hintcnt==0) {
             Toast.makeText(getApplicationContext(), "한번만 더 생각해보세요", Toast.LENGTH_LONG).show();
             Hintcnt++;
@@ -699,11 +664,18 @@ public class PuzzleActivity extends AppCompatActivity {
             intent=new Intent(getApplicationContext(),HintWindow.class);
             intent.putExtra("ImagePath",mCurrentPhotoPath);
             intent.putExtra("ImagePathURL",mCurrentPhotoUri);
-            intent.putExtra("name",sendName);
+            intent.putExtra("assetName",sendName);
             startActivity(intent);
 
             setContentView(R.layout.activity_now);
         }
+    }
+
+    public static Bitmap rotateImage(Bitmap source, float angle) {
+        Matrix matrix = new Matrix();
+        matrix.postRotate(angle);
+        return Bitmap.createBitmap(source, 0, 0, source.getWidth(), source.getHeight(),
+                matrix, true);
     }
 
 

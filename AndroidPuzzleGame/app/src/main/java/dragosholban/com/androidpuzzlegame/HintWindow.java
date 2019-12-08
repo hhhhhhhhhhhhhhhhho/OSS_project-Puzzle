@@ -53,8 +53,6 @@ public class HintWindow extends AppCompatActivity {
         } else if (mCurrentPhotoUri != null) {
             imageView.setImageURI(Uri.parse(mCurrentPhotoUri));
         }
-
-
     }
 
 

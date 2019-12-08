@@ -35,14 +35,7 @@
         <activity android:name=".PuzzleActivity3" />
 
         <activity android:name=".HintWindow" />
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> remotes/github-desktop-allstar94/master
-=======
->>>>>>> TaeHoon/master
->>>>>>> taejeong
-=======
->>>>>>> taejeong
+
 
         <provider
             android:name="android.support.v4.content.FileProvider"
