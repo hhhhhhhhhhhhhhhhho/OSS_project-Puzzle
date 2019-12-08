@@ -34,7 +34,7 @@ public class PuzzleActivity3 extends AppCompatActivity {
     ArrayList<PuzzlePiece> pieces;
     String mCurrentPhotoPath;
     String mCurrentPhotoUri;
-
+    String sendName;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +45,7 @@ public class PuzzleActivity3 extends AppCompatActivity {
 
         Intent intent = getIntent();
         final String assetName = intent.getStringExtra("assetName");
+        sendName=assetName;
         mCurrentPhotoPath = intent.getStringExtra("mCurrentPhotoPath");
         mCurrentPhotoUri = intent.getStringExtra("mCurrentPhotoUri");
 
@@ -586,7 +587,11 @@ public class PuzzleActivity3 extends AppCompatActivity {
             Hintcnt=0;
             //힌트 이미지 출력만 하면 끝.
             Toast.makeText(getApplicationContext(), "힌트", Toast.LENGTH_SHORT).show(); //새로운 윈도우로 연결 HintWindow
-            Intent intent=new Intent(getApplicationContext(),HintWindow.class);
+            Intent intent;
+            intent=new Intent(getApplicationContext(),HintWindow.class);
+            intent.putExtra("ImagePath",mCurrentPhotoPath);
+            intent.putExtra("ImagePathURL",mCurrentPhotoUri);
+            intent.putExtra("assetName",sendName);
             startActivity(intent);
         }
     }
