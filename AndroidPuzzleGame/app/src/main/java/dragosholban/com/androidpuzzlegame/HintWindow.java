@@ -17,6 +17,7 @@ import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -43,7 +44,7 @@ public class HintWindow extends AppCompatActivity {
         mCurrentPhotoUri = intent.getStringExtra("mCurrentPhotoUri");
 
         setContentView(R.layout.activity_now);
-        final ImageView imageView = new ImageView(this);
+        final ImageView imageView = findViewById(R.id.imageView);
 
         if (assetName != null) {
             setPicFromAsset(assetName, imageView);
@@ -52,6 +53,8 @@ public class HintWindow extends AppCompatActivity {
         } else if (mCurrentPhotoUri != null) {
             imageView.setImageURI(Uri.parse(mCurrentPhotoUri));
         }
+
+
     }
 
 
@@ -73,9 +76,7 @@ public class HintWindow extends AppCompatActivity {
 
             // Determine how much to scale down the image
             int scaleFactor = Math.min(photoW/targetW, photoH/targetH);
-
             is.reset();
-
             // Decode the image file into a Bitmap sized to fill the View
             bmOptions.inJustDecodeBounds = false;
             bmOptions.inSampleSize = scaleFactor;
