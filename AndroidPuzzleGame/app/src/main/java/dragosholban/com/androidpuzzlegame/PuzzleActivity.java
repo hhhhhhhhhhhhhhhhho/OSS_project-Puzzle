@@ -666,8 +666,6 @@ public class PuzzleActivity extends AppCompatActivity {
             intent.putExtra("ImagePathURL",mCurrentPhotoUri);
             intent.putExtra("assetName",sendName);
             startActivity(intent);
-
-            setContentView(R.layout.activity_now);
         }
     }
 
